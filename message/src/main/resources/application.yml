@@ -1,0 +1,48 @@
+server:
+  port: 8020
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 10485760
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://112.124.54.93:3306/ojs?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    username: root
+    password: hanjinhao
+    platform: mysql
+  jpa:
+    database: mysql
+    show-sql: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        jdbc:
+          batch_size: 500
+          batch_versioned_data: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  redis:
+    host: 47.97.38.53 # IP
+    port: 6379 
+    password: hanjinhao
+    timeout: 10000
+    lettuce:
+      pool:
+        max-active: 8 
+        max-wait: -1ms  
+        min-idle: 0 
+        max-idle: 8
+
+
+
+
+
+
+
+
+
+
